@@ -12,7 +12,7 @@ vim.keymap.set(
 vim.cmd([[imap <silent> <C-j> <Plug>(copilot-next)]])
 vim.cmd([[imap <silent> <C-l> <Plug>(copilot-previous)]])
 
--- comments
+-- comments settings
 vim.keymap.set(
   "n",
   "<leader>/",
@@ -26,4 +26,5 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "Toggle Comment" }
 )
 
+vim.keymap.set("n", "<leader>r", "<Plug>RestNvim<cr>", { silent = true, desc = "REST" })
 -- vim.keymap.set("n", "<leader>t", "<cmd>lua _NODE_TOGGLE()<cr>", { noremap = true, silent = true, desc = "Node" })
