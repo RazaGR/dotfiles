@@ -28,3 +28,11 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>r", "<Plug>RestNvim<cr>", { silent = true, desc = "REST" })
 -- vim.keymap.set("n", "<leader>t", "<cmd>lua _NODE_TOGGLE()<cr>", { noremap = true, silent = true, desc = "Node" })
+
+-- git signs
+vim.keymap.set(
+  "n",
+  "<leader>gS",
+  "<cmd>:Gitsigns toggle_current_line_blame<CR>",
+  { noremap = true, silent = true, desc = "Toggle Gitsign" }
+)
