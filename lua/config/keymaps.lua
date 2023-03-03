@@ -37,5 +37,7 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "Toggle Gitsign" }
 )
 
+-- format on save
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
 -- explorer collapse/expand
 -- vim.keymap.set("n", "h", "<cmd>toggle_node<CR>", { noremap = true, silent = true, desc = "Neo-tree: Collapse folder" })
