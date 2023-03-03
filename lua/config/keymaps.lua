@@ -36,3 +36,6 @@ vim.keymap.set(
   "<cmd>:Gitsigns toggle_current_line_blame<CR>",
   { noremap = true, silent = true, desc = "Toggle Gitsign" }
 )
+
+-- explorer collapse/expand
+-- vim.keymap.set("n", "h", "<cmd>toggle_node<CR>", { noremap = true, silent = true, desc = "Neo-tree: Collapse folder" })
