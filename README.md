@@ -1,7 +1,7 @@
 # my dotfiles
 
 ```
-rm -rf ~/.config/nvim
+rm -rf ~/.config/nvim && \
 git clone https://github.com/RazaGR/dotfiles.git ~/.config/nvim
 ```
 ## install nvim
@@ -32,6 +32,6 @@ ln -f yabairc ~/.config/yabai/yabairc
 brew install tmux && \
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
 cd ~/.config/nvim && \
-ln -f tmux.conf ~/.tmux.conf
-
+ln -f tmux.conf ~/.tmux.conf && \
+tmux source-file ~/.tmux.conf 
 ```
