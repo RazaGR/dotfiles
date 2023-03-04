@@ -13,6 +13,7 @@ require("lazy").setup({
     -- import any extras modules here
     { import = "plugins.extras.lang.go" },
     { import = "plugins.extras.lang.rust" },
+    -- { import = "plugins.extras.lang.flutter" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },

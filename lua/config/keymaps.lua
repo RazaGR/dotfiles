@@ -39,5 +39,11 @@ vim.keymap.set(
 
 -- format on save
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
+
+-- flutter tools status line
+-- function _G.statusLine()
+--  return vim.g.flutter_tools_decorations.app_version
+--end
+-- vim.opt.statusline = "%!v:statusLine()"
 -- explorer collapse/expand
 -- vim.keymap.set("n", "h", "<cmd>toggle_node<CR>", { noremap = true, silent = true, desc = "Neo-tree: Collapse folder" })
