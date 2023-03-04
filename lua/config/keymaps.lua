@@ -40,10 +40,16 @@ vim.keymap.set(
 -- format on save
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
 
+-- map shift + p to open last files
+vim.keymap.set(
+  "n",
+  "<S-p>",
+  "<cmd>Telescope oldfiles cwd_only=true<cr><cr>",
+  { noremap = true, silent = true, desc = "Open last files" }
+)
+
 -- flutter tools status line
 -- function _G.statusLine()
 --  return vim.g.flutter_tools_decorations.app_version
 --end
 -- vim.opt.statusline = "%!v:statusLine()"
--- explorer collapse/expand
--- vim.keymap.set("n", "h", "<cmd>toggle_node<CR>", { noremap = true, silent = true, desc = "Neo-tree: Collapse folder" })
