@@ -48,6 +48,7 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "Open last files" }
 )
 
+-- TODO: later on
 -- flutter tools status line
 -- function _G.statusLine()
 --  return vim.g.flutter_tools_decorations.app_version
