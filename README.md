@@ -35,3 +35,8 @@ cd ~/.config/nvim && \
 ln -f tmux.conf ~/.tmux.conf && \
 tmux source-file ~/.tmux.conf 
 ```
+
+## nvim related
+```
+brew install jq # parse json in rest
+```

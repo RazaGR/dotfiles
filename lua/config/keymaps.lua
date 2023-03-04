@@ -26,9 +26,9 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "Toggle Comment" }
 )
 
-vim.keymap.set("n", "<leader>r", "<Plug>RestNvim<cr>", { silent = true, desc = "REST" })
--- vim.keymap.set("n", "<leader>t", "<cmd>lua _NODE_TOGGLE()<cr>", { noremap = true, silent = true, desc = "Node" })
-
+-- REST client
+vim.keymap.set("n", "<leader>rr", "<Plug>RestNvim<cr>", { silent = true, desc = "REST call" })
+vim.keymap.set("n", "<leader>rp", "<Plug>RestNvimPreview<cr>", { silent = true, desc = "REST preview" })
 -- git signs
 vim.keymap.set(
   "n",
@@ -38,7 +38,8 @@ vim.keymap.set(
 )
 
 -- format on save
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
+-- disable for now
+-- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
 
 -- map shift + p to open last files
 vim.keymap.set(
