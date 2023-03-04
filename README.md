@@ -40,3 +40,14 @@ tmux source-file ~/.tmux.conf
 ```
 brew install jq # parse json in rest
 ```
+
+## tmux shortcut
+```
+ln -f t.sh /usr/local/bin/t 
+```
+
+t l = tmux ls
+t a 0/name = tmux attach -t {index||name}
+t k = tmuxh kill -t {name}
+t n name = tmuxh new -s {name}
+
