@@ -24,6 +24,8 @@ return {
         "vim",
         "yaml",
         "http",
+        "go",
+        "rust",
       },
     },
   },

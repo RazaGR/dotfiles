@@ -15,6 +15,14 @@ make install && nvim --version
 
 ```
 
+# other 
+```
+brew install lazygit
+brew install fd
+```
+
+
+
 ## install yabai
 ```
 brew install koekeishiya/formulae/yabai && \
@@ -59,6 +67,4 @@ install a nerdfont
 in Settings > Profiles > Text
    -> 
 ```
-
-
 
