@@ -65,7 +65,10 @@ t n name = tmuxh new -s {name}
 
 ```
 install a nerdfont 
-in Settings > Profiles > Text
-   -> 
+in iterm > Settings > Profiles > Text > select NerdFont
+in iterm > Settings > Profiles > color > set background 222336
+in system Settings > Desktop & Docks > Mission Control > only have checked "Display have separate Spaces"
+in system settings > Keyboards > click keyboard shortcuts > mission control > mission control ( check all desktops )
+in system Settings > Accessability > Display > uncheck Reduce motion
 ```
 
