@@ -43,6 +43,7 @@ cd ~/.config/nvim && \
 ln -f tmux.conf ~/.tmux.conf && \
 tmux source-file ~/.tmux.conf 
 ```
+after installing tmuxh run `CTRL+i` in terminal to install themes and plugins for tmux
 
 ## nvim related
 ```
