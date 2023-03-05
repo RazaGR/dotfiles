@@ -10,7 +10,7 @@ rm -rf  ~/.local/share/nvim && \
 git clone https://github.com/neovim/neovim.git && \
 cd neovim && \
 git checkout release-0.8 && \
-make CMAKE_BUILD_TYPE=Releasea && \
+make CMAKE_BUILD_TYPE=Release && \
 make install && nvim --version
 
 ```
@@ -22,7 +22,7 @@ brew install koekeishiya/formulae/skhd
 ```
 setup config
 ```
-cd ~/.config/nvim && \
+cd ~/.config/nvim && mkdir skhd && mkdir yabai && \
 ln -f skhdrc ~/.config/skhd/skhdrc && \
 ln -f yabairc ~/.config/yabai/yabairc
 ```
@@ -45,9 +45,20 @@ brew install jq # parse json in rest
 ```
 ln -f t.sh /usr/local/bin/t 
 ```
-
+```
 t l = tmux ls
 t a 0/name = tmux attach -t {index||name}
 t k = tmuxh kill -t {name}
 t n name = tmuxh new -s {name}
+
+```
+##iterm 
+
+```
+install a nerdfont 
+in Settings > Profiles > Text
+   -> 
+```
+
+
 
