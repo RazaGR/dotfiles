@@ -7,6 +7,7 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
+# detach current session
 if [ $1 = "d" ]; then
   tmux detach
 elif [ $1 = "n" ]; then
@@ -16,14 +17,25 @@ elif [ $1 = "n" ]; then
     exit 1
   fi
   tmux new -s $2
+# delete session
 elif [ $1 = "k" ]; then
   if [ -z "$2" ]; then
     echo "No session id provided"
     exit 1
   fi
-  tmux kill-session -t $2
+       sessions=($(tmux ls | awk -F ':' '{print $1}' | cut -c 1-))
+      index=$2
+        for i in "${!sessions[@]}"
+          do
+            if [[ $i -eq $index ]] || [[ "${sessions[i]}" == "$index" ]]; then
+              tmux kill-session -t ${sessions[i]}
+              exit 0
+            fi
+          done
+# list sessions 
 elif [ $1 = "l" ]; then
   tmux ls
+# attach to session
 elif [ $1 = "a" ]; then
   if [ -z "$2" ]; then
     echo "No session index provided"
@@ -38,7 +50,7 @@ elif [ $1 = "a" ]; then
               exit 0
             fi
           done
-        
+# help        
 elif [ $1 = "h" ]; then
   echo "Usage: t.sh [option] [session name]"
   echo "Options:"
