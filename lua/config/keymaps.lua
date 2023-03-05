@@ -55,3 +55,16 @@ vim.keymap.set(
 --  return vim.g.flutter_tools_decorations.app_version
 --end
 -- vim.opt.statusline = "%!v:statusLine()"
+
+-- add context menu
+vim.cmd([[:amenu 10.100 ContextMenu.Definition <cmd>:Telescope lsp_defintions<CR>]])
+vim.cmd([[:amenu 10.110 ContextMenu.Peek\ Definition <cmd>:Lspsaga peek_definition<CR>]])
+vim.cmd([[:amenu 10.120 ContextMenu.Type\ Definition <cmd>:Telescope lsp_type_definitions<CR>]])
+vim.cmd([[:amenu 10.130 ContextMenu.Implementations <cmd>:Telescope lsp_implementations<CR>]])
+vim.cmd([[:amenu 10.140 ContextMenu.References <cmd>:Telescope lsp_references<CR>]])
+vim.cmd([[:amenu 10.150 ContextMenu.-sep- *]])
+vim.cmd([[:amenu 10.160 ContextMenu.Rename <cmd>:Lspsaga rename<CR>]])
+vim.cmd([[:amenu 10.170 ContextMenu.Code\ Actions <cmd>:Lspsaga code_action<CR>]])
+
+vim.keymap.set("n", "<RightMouse>", "<cmd>:popup ContextMenu<CR>")
+vim.keymap.set("n", "<leader>m", "<cmd>:popup ContextMenu<CR>")
