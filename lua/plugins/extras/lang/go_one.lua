@@ -1,6 +1,6 @@
--- local cmp = require("cmp")
 return {
 
+  -- add Go+more to treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
@@ -9,6 +9,7 @@ return {
       end
     end,
   },
+
   -- correctly setup mason lsp / dap extensions
   {
     "williamboman/mason.nvim",
@@ -18,20 +19,8 @@ return {
       end
     end,
   },
-  {
-    "ray-x/go.nvim",
-    dependencies = { -- optional packages
-      "ray-x/guihua.lua",
-      "neovim/nvim-lspconfig",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("go").setup()
-    end,
-    event = { "cmdlineenter" },
-    ft = { "go", "gomod" },
-    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
-  },
+
+  -- correctly setup lspconfig for Go
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -73,36 +62,25 @@ return {
         },
       },
     },
-    setup = {
-      gopls = function()
-        require("lspconfig").gopls.setup({
-          cmd = { "gopls", "serve", "--debug=localhost:6060" },
-          init_options = {
-            usePlaceholders = true,
-          },
-        })
-      end,
-    },
   },
 
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   -- enabled = false,
-  --   opts = {
-  --     servers = {
-  --       gopls = {},
-  --     },
-  --     setup = {
-  --       gopls = function()
-  --         require("lspconfig").gopls.setup({
-  --           capabilities = cmp.lsp.client_capabilities(),
-  --           cmd = { "gopls", "serve", "--debug=localhost:6060" },
-  --           init_options = {
-  --             usePlaceholders = true,
-  --           },
-  --         })
-  --       end,
-  --     },
-  --   },
-  -- },
+  {
+    "ray-x/go.nvim",
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup()
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  },
+  {
+    "olexsmir/gopher.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
+    config = true,
+  },
 }
